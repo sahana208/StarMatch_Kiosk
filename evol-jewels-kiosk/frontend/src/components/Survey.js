@@ -18,6 +18,14 @@ const translations = {
       traditional: 'Traditional',
       modern: 'Modern'
     },
+    category: 'Preferred category (optional)',
+    categoryOptions: {
+      earrings: 'Earrings',
+      necklace: 'Necklace',
+      ring: 'Ring'
+    },
+    vibe: 'Inspiration or vibe (optional)',
+    vibePlaceholder: 'e.g., Deepika, classic, glam',
     budget: 'Your budget (₹)?',
     findJewelry: 'Find My Jewelry',
     language: 'Language',
@@ -43,6 +51,14 @@ const translations = {
       traditional: 'पारंपरिक',
       modern: 'आधुनिक'
     },
+    category: 'पसंदीदा श्रेणी (वैकल्पिक)',
+    categoryOptions: {
+      earrings: 'ईयररिंग्स',
+      necklace: 'नेकलेस',
+      ring: 'रिंग'
+    },
+    vibe: 'प्रेरणा या वाइब (वैकल्पिक)',
+    vibePlaceholder: 'जैसे, दीपिका, क्लासिक, ग्लैम',
     budget: 'आपका बजट (₹)?',
     findJewelry: 'मेरी ज्वेलरी ढूंढें',
     language: 'भाषा',
@@ -58,7 +74,9 @@ const Survey = ({ onSubmit, onLanguageChange }) => {
     occasion: '',
     style: '',
     budget: 10000,
-    language: 'en'
+    language: 'en',
+    category: '',
+    vibe: ''
   });
 
   const t = translations[formData.language];

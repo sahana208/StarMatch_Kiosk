@@ -7,6 +7,7 @@ const translations = {
     design: 'Design',
     inspiredBy: 'Inspired by',
     viewItem: 'View Item',
+    tryOn: 'Try On',
     back: 'Back to Survey',
     noResults: 'No jewelry found matching your criteria. Try adjusting your preferences.'
   },
@@ -16,12 +17,13 @@ const translations = {
     design: 'डिज़ाइन',
     inspiredBy: 'से प्रेरित',
     viewItem: 'आइटम देखें',
+    tryOn: 'ट्राय करें',
     back: 'वापस सर्वेक्षण पर जाएं',
     noResults: 'आपकी पसंद से मेल खाने वाली कोई ज्वेलरी नहीं मिली। कृपया अपनी प्राथमिकताएं बदलकर देखें।'
   }
 };
 
-const Recommendations = ({ recommendations, onBack, language = 'en' }) => {
+const Recommendations = ({ recommendations, onBack, onTryOn, language = 'en' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const t = translations[language] || translations.en;
 
@@ -116,6 +118,15 @@ const Recommendations = ({ recommendations, onBack, language = 'en' }) => {
             >
               {t.viewItem}
             </a>
+          )}
+
+          {onTryOn && (
+            <button
+              onClick={() => onTryOn(currentItem)}
+              className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg text-lg"
+            >
+              {t.tryOn}
+            </button>
           )}
           
           <button
